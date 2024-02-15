@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>바코드 스캐너</title>
+</head>
+<body>
+
+<button onclick="moveUrl('test1');">--- 바코드 test1 ---</button>
+<button onclick="moveUrl('test2');">--- 바코드 test2 ---</button>
+<button onclick="moveUrl('test3');">--- 바코드 test3 ---</button>
+<button onclick="moveUrl('test4');">--- 바코드 test4 ---</button>
+
+젠킨스 빌드 후 자동배포 - 2024/02/15
+
+<script>
+
+  // 현재 웹페이지의 URL 가져오기
+  const currentUrl = window.location.href;
+
+  // ngrok 주소 동적으로 생성
+  const ngrokUrl = currentUrl.replace(/\/[^\/]*$/, '/');
+
+  // ngrok 주소 출력 또는 활용
+  console.log('Ngrok URL:', ngrokUrl);
+
+  
+  // const url = 'https://83c4-103-129-187-91.ngrok-free.app/'
+  const url = ngrokUrl;
+
+  function moveUrl(value) {
+
+    if(value === 'test1'){
+        window.location.href = url + '/test1.html';
+    }
+    if(value === 'test2'){
+        window.location.href = url + '/test2.html';
+    }
+    if(value === 'test3'){
+        window.location.href = url + '/test3.html';
+    }
+    if(value === 'test4'){
+        window.location.href = url + '/test4.html';
+    }
+  }
+</script>
+
+</body>
+</html>
